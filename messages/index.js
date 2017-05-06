@@ -7,7 +7,7 @@ var help = require("./dialogs/help.js");
 var profiling = require("./dialogs/profiling.js");
 var deleteProfile = require("./dialogs/deleteProfile.js");
 
-var useEmulator = true// (process.env.NODE_ENV == 'development');
+var useEmulator = (process.env.NODE_ENV == 'development');
 
 var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
     appId: process.env['MicrosoftAppId'],
