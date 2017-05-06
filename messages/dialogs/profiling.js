@@ -28,14 +28,12 @@ let questions = [
     },
     function (session, results) {
       session.userData.choice5 = results.response;
-      session.send("Thanks for completing the profiling :) Tap on the link to continue!");
-      session.endDialog("http://localhost:3000")
-      // var msg = new builder.SigninCard(session)
-      //   .text(' Tap on the link to continue!')
-      //   .button('Check out Profile', 'profile.html')
-      // var reply = new builder.Message(session)
-      //                             .attachments([msg]);
-      // session.endDialog(reply);
+      var msg = new builder.SigninCard(session)
+        .text('Thanks for completing the profiling :) Tap on the link to continue!')
+        .button("Let's Go!", 'profile.html')
+      var reply = new builder.Message(session)
+                                  .attachments([msg]);
+      session.endDialog(reply);
     },
 ]
 
