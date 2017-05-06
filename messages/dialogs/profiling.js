@@ -30,7 +30,7 @@ let questions = [
       session.userData.choice5 = results.response;
       var msg = new builder.SigninCard(session)
         .text('Thanks for completing the profiling :) Tap on the link to continue!')
-        .button("Let's Go!", 'profile.html')
+        .button("Let's Go!", 'http://localhost:3000')
       var reply = new builder.Message(session)
                                   .attachments([msg]);
       session.endDialog(reply);
